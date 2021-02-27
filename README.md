@@ -20,4 +20,5 @@ VADER Sentiment Classifier              : vader_sent.py
 How to run the application ?
 ------------------------------
 1. Clone the library
+2. Install dependencies from requirements.txt (pip install -r requirements.txt)
 2. Run the code using - streamlit run app.py

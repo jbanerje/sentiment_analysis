@@ -32,13 +32,16 @@ def launch_sentiment_analysis_ui():
     user_input = st.text_area(label='')
     
     if st.button('Submit'):
-        sentiment_polarity =  get_sentiments(user_input)
+        sentiment_polarity, score =  get_sentiments(user_input)
+        
         if sentiment_polarity == 'Positive Sentiment':
             st.success(sentiment_polarity)
         elif sentiment_polarity == 'Neutral Sentiment':
             st.warning(sentiment_polarity)
         else:
             st.error(sentiment_polarity)
+
+        st.write(pd.DataFrame({'Sentiment_Metric':list(score.keys()), 'Score' : list(score.values())}))
 
 if __name__ == "__main__":
     
